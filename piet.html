@@ -1,0 +1,146 @@
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>sPiet</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<a href="index.html" class="logo">Home</a>
+					</header>
+
+				<!-- Nav -->
+					<nav id="nav">
+						<ul class="links">
+							<li class="active"><a href="index.html">Projects</a></li>
+							<li class="active"><a href="index.html">About me</a></li>
+						</ul>
+						<ul class="icons">
+							<li><a href="https://github.com/sagitbolat" class="icon brands fa-github">
+								<span class="label">GitHub</span></a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<section class="post">
+								<header class="major">
+									<span class="date">April 25, 2017</span>
+									<h1>sPiet<br />
+									a Piet interpreter</h1>
+									<p>"Piet" is an esoteric programming language created by David Morgan-Mar that aims to convert
+										the form of code into abstract art. sPiet is an interpreter
+										for a custom dialect of piet, with minor differences from the original
+										specifications. The goal of the dialect is to improve readability of the language,
+										and introduce custom palettes.</p>
+								</header>
+								<div class="image main"><img src="images/sPiet/sPiet1.png" alt="" /></div>
+
+								<h3>What is this?</h3>
+								<p>sPiet is a command line interpreter for a custom dialect of Piet. 
+									A dialect of a programming language is an extension of a base 
+									programming lanuage that does not alter the base of the language,
+									but aims to add and/or change certain aspect of that language.</p>
+								<p>The dialect that sPiet uses aims to improve readability by enabling
+									the user to specify the colors that their program uses for instructions,
+									as well as simplifying how certain rules operate.
+								</p>
+								<p>You can find the full specifications of the dialect on my 
+									<a href=https://github.com/sagitbolat/sPiet>GitHub.</a>
+									The original specification can be found on David's 
+									<a href=https://www.dangermouse.net/esoteric/piet.html>website.</a>
+								</p>
+
+								<h3>Why is this?</h3>
+								<p>The original Piet language is very unique. It sets out to convert
+									the act of creating programs into an act of creating abstract art,
+									and it achieves that goal perfectly.
+								</p>
+								<p>The problem I saw with the original specifications is the limited nature of it.
+									David provides you with a rainbow of 6 different colors, with 3 shades for each color.
+									Any color that does not lie on that rainbow is ignored.
+									My dialect aims to let the user decide which colors they want to code with.
+									This is done by allowing the option for the user to privide a simple "Palette" image
+									which the interpreter then uses to determine what RGB values the "rainbow" will hold.
+								</p>
+								<p>Additionally, the dialect introduces a 21st color, which is used to stop the runtime
+									the program. The base specification only stops execution once the program becomes "stuck".
+									This type of setup requires the user to construct a large structure to ensure the program
+									stops when the user needs it to.
+									With this change, the user can stop the program with only a sigle command, rather than an
+									entire structure of commands.
+								</p>
+
+								<h3>How is this?</h3>
+								<p>The entire project is implemented using python. The OpenCV and NumPy libraries were used for image
+									processing. An alternative was to use the Pillow library, but OpenCV proved to yield better
+									performance. The ArgParse library was used to implement command line arguments for the interpreter.
+								</p>
+								<p>Because of the nature of Piet, the majority of the project uses a functional paradigm.
+									However, due to the language using a stack in order to hold data, and a pointer object that moves
+									across the image, some object oriented design was necessary.
+								</p>
+								<p>The project itself is broken into 3 components. The stack is used for holding and operating on the data 
+									and the pointer. The parser is used to process the image one pixel at a time. Finally the interpreter
+									takes the user's input, passes it to the parser, and collects the data produced by the parser, converts
+									it to useful data for the stack, and feeds to the stack.
+								</p>
+							</section>
+
+					</div>
+
+				<!-- Footer -->
+				<footer id="footer">
+					<section class="split contact">
+						<section class="alt">
+							<h3>Address</h3>
+							<p>Emeryville, CA</p>
+						</section>
+						<section>
+							<h3>Phone</h3>
+							<p><a href="#">(510) 345-8706</a></p>
+						</section>
+						<section>
+							<h3>Email</h3>
+							<p><a href="#">sagitbolat@gmail.com</a></p>
+						</section>
+						<section>
+							<h3>GitHub</h3>
+							<p><a href="https://github.com/sagitbolat">github.com/sagitbolat</a></p>
+						</section>
+					</section>
+				</footer>
+
+			<!-- Copyright -->
+				<div id="copyright">
+					<ul></ul>
+				</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
